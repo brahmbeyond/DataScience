@@ -7526,7 +7526,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>For this first we need to know about the data in the dataset. As we have to test the data means one data is dependent on other data like if we are trying to predict a persons age group by inputing the salary, So, it clearly means that Age is dependent upon Salary. Age Group is dependent data and Salary is Independent Data. 
+<p>For this first we need to know about the data in the dataset. As we have to test the data means one data is dependent on other data like if we are trying to predict a person's age group by inputing the salary, So, it clearly means that Age is dependent upon Salary. Age Group is dependent data and Salary is Independent Data. 
 <br/>So we take X as independent data variable and Y as dependent data variable.</p>
 </div>
 </div>
@@ -7639,7 +7639,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># As the above column variety is string so will give error while training as it wants homoegneous data so will </span>
-<span class="c1"># convert it into number using Preprocessing</span>
+<span class="c1"># convert it into number using labelEncoder a Preprocessing technique</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
 <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
@@ -7795,7 +7795,7 @@ a.anchor-link {
 <p><strong>train_test_split</strong> divides it into 4 parts as X_Train, X_test, Y_tain, Y_test.
 means dividing the both train and test data into independent and dependent parts.</p>
 <p>train_test_split method is imported from sklearn library's model_selection module.
-<code>from sklearn.model_selection import train_test_import</code></p>
+<code>from sklearn.model_selection import train_test_split</code></p>
 <h4 id="parameters-used-in-train_test_split-method">parameters used in train_test_split method<a class="anchor-link" href="#parameters-used-in-train_test_split-method">¶</a></h4><ul>
 <li>X =&gt; independent data</li>
 <li>Y =&gt; dependent data</li>
@@ -7887,7 +7887,7 @@ means dividing the both train and test data into independent and dependent parts
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>   <span class="c1">#we'll use Linear Regression to train and test model's score.</span>
 <span class="n">trainedM</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
 <span class="n">trainedM</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">Y_train</span><span class="p">)</span>
 </pre></div>
@@ -7942,7 +7942,7 @@ means dividing the both train and test data into independent and dependent parts
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>This holdout method as some shortcomings:-</p>
 <ul>
-<li>In this method there is possibility that the main data which you wanted to be in training and that data will be gone instead in test. So it make the accuray low.</li>
+<li>In this method there is possibility that the main data which you wanted to be in training will be gone instead in test. So it make the accuray low.</li>
 </ul>
 <p>When to Choose it:-</p>
 <ul>
@@ -7952,17 +7952,15 @@ means dividing the both train and test data into independent and dependent parts
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=89f273b8-bf3b-4213-b3f8-94f7e9910a9b">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b5ccb9d0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<hr/>
 </div>
 </div>
 </div>
@@ -7995,8 +7993,13 @@ means dividing the both train and test data into independent and dependent parts
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Like if we divivde data into 5 folds. It will divide the data into 5 equal parts. Then while training it will first take 1st fold as testing and rest of other 4 for training. The in second step it will use second fold for testing and the rest of others for training. This goes on until each of the fold is used for testing. So if folds=5 then training will be done in 5 steps.
-This helps in training and testing each and every data in the dataset for better prediction results.</p>
+<p>Like if we divide data into 5 folds. It will divide the data into 5 equal parts. Then while training it will</p>
+<ul>
+<li>first take 1st fold as testing and rest of other 4 for training.</li>
+<li>The in second step it will use second fold for testing and the rest of others for training.</li>
+<li>This goes on until each of the fold is used for testing. So if folds=5 then training will be done in 5 steps.</li>
+</ul>
+<p>This helps in training and testing each and every data in the dataset for better prediction results.</p>
 </div>
 </div>
 </div>
@@ -8018,7 +8021,7 @@ This helps in training and testing each and every data in the dataset for better
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>First we need to import the KFold from sklearn.model_selection and cross_val_score also.
+<p>First we need to import the KFold from <code>sklearn.model_selection</code> and <code>cross_val_score</code> also.
 KFold is model itself.</p>
 <ul>
 <li>In KFold you need to define the n_splits , means no. of splits which you want.</li>
@@ -8028,7 +8031,7 @@ KFold is model itself.</p>
 <li>model, which model you want to use to train the data on.</li>
 <li>X, the whole dataset's independent value</li>
 <li>Y, the whole dataset's dependent value</li>
-<li>cv, stands for cross validation, in this you have to define the cross validation method you want to use.</li>
+<li>cv, stands for cross validation, in this you have to define the cross validation method you want to use like here it will be KFold.</li>
 </ul>
 </div>
 </div>
@@ -8083,7 +8086,8 @@ KFold is model itself.</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">trainedM</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="n">kf</span><span class="p">)</span> 
-<span class="c1"># here trainedM is the object of LinearRegression method from above Holdout CV</span>
+
+<span class="c1"># here trainedM is the object of LinearRegression method which was defined above in Holdout CV</span>
 </pre></div>
 </div>
 </div>
@@ -8171,17 +8175,15 @@ KFold is model itself.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e79ec786-43ed-43ae-83e4-52908bed820f">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b4f4b95d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<hr/>
 </div>
 </div>
 </div>
@@ -8203,7 +8205,8 @@ KFold is model itself.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>This is same as KFold model but with improvement as each of the fold it is splitted into has same classes ratios.</p>
+<p>This is same as KFold model but with improvement, as each of the fold it is splitted into has same classes ratios.
+Means if a dataset has 2 classes and ratio  is 60:40 then each of the fold will have same 60:40 ratio.</p>
 </div>
 </div>
 </div>
@@ -8342,13 +8345,25 @@ KFold is model itself.</p>
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caa22148">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<hr/>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0969e667-376c-4abb-bce5-572289e07952">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Leave-P-Oout">Leave P Oout<a class="anchor-link" href="#Leave-P-Oout">¶</a></h2>
+<h2 id="Leave-P-Out">Leave P Out<a class="anchor-link" href="#Leave-P-Out">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8370,8 +8385,8 @@ KFold is model itself.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Like if total are 5 samples (1,2,3,4,5) in a dataset and P = 2, the what will happen is in each step 2 data samples will be used in testing and other 3 in training. 
-Now we are talking about each step then how many steps will be there !!
+<p>Like if total are 5 samples (1,2,3,4,5) in a dataset and P = 2, then what will happen is, in each step, 2 data samples will be used in testing and other 3 in training. 
+Now we are talking about each step then how many steps will be there !!?
 This will work like this =&gt; first sample here 1 will form a combination with every other sample in each step to be used for test and remaining will be used in training.
 like</p>
 <ul>
@@ -8518,17 +8533,15 @@ like</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=571c661b-0b68-45ce-9e02-9514de73cadd">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4036fec9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<hr/>
 </div>
 </div>
 </div>
@@ -8550,9 +8563,10 @@ like</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Works same as LEave P Out but in this only 1 sample is used for test everytime rather than 2.</p>
 <p>In this one sample is used for testing and other remaning are used for training on each step.
 Like if you have 5 samples in dataset then in each step one sample will be used for testing and other remaining will be used for training. The steps will be completed when all samples are used for testing. 
-So steps = no. of samples in dataset</p>
+So  ' steps = no. of samples in dataset '</p>
 <p>We don't have define the number of splits here as per its name its always one.</p>
 </div>
 </div>
@@ -8730,20 +8744,6 @@ So steps = no. of samples in dataset</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=76bd9165-c23a-4942-9622-bb1df48451b4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5d40f19e-fa87-489f-bb54-67435f0b2c6d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8751,6 +8751,7 @@ So steps = no. of samples in dataset</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
 <hr/>
 </div>
 </div>
@@ -8788,8 +8789,8 @@ Lets see that</p>
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
 
-<span class="n">score</span><span class="o">=</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">classifier1</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>                         <span class="c1">#uses TSratified KFold as uses GaussianNB</span>
-<span class="c1"># score=cross_val_score(trainedM,X,Y)                          #uses Kfold as uses LinearRegression</span>
+<span class="n">score</span><span class="o">=</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">classifier1</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>              <span class="c1">#uses Sratified KFold as classifier1(model) here is GaussianNB</span>
+<span class="c1"># score=cross_val_score(trainedM,X,Y)               #uses Kfold as as trainedM here is(model)  LinearRegression</span>
 
 <span class="n">score</span>
 </pre></div>
@@ -8842,8 +8843,11 @@ Lets see that</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here if you don't specify the value of cv it will use by default 5 splits and the crossvalidation method it will use will depend upon the model that is given to it.
-Like if a classification model is given t i then it will use Stratified KFold and if other estimater model is given to it then it will use KFold only.</p>
+<ul>
+<li>Here if you don't specify the value of cv it will use by default 5 splits and</li>
+<li>the crossvalidation method it will use will depend upon the model that is given to it.</li>
+</ul>
+<p>Like if a classification model is given then it will use Stratified KFold and if other estimater model is given to it then it will use KFold only.</p>
 </div>
 </div>
 </div>
